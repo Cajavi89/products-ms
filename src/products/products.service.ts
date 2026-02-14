@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { CreateProductDto } from './dto/create-product.dto'
 import { UpdateProductDto } from './dto/update-product.dto'
@@ -49,11 +50,12 @@ export class ProductsService {
   }
 
   async update(id: number, updateProductDto: UpdateProductDto) {
+    const { id: _, ...data } = updateProductDto
     await this.findOne(id)
 
     return await this.prisma.product.update({
       where: { id, available: true },
-      data: updateProductDto,
+      data: data,
     })
   }
 
