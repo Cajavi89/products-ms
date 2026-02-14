@@ -518,6 +518,7 @@ export const ProductScalarFieldEnum = {
   id: 'id',
   name: 'name',
   price: 'price',
+  available: 'available',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -557,6 +558,13 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+/**
+ * Reference to a field of type 'Boolean'
+ */
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
