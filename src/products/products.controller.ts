@@ -29,9 +29,9 @@ export class ProductsController {
   update(
     // @Param('id') id: string,
     // @Payload() updateProductDto: UpdateProductDto,
-    @Payload() payload: { id: string; updateProductDto: UpdateProductDto },
+    @Payload() updateProductDto: UpdateProductDto,
   ) {
-    return this.productsService.update(+payload.id, payload.updateProductDto)
+    return this.productsService.update(updateProductDto.id, updateProductDto)
   }
 
   @MessagePattern({ cmd: 'delete_product' })
